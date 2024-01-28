@@ -10,7 +10,7 @@ from googleapiclient.errors import HttpError
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
-SPREADSHEET_ID = '[SPREADSHEET_ID]'
+SPREADSHEET_ID = 'SPREADSHEET_ID'
 RANGE_NAME = 'A4:H27'
 
 def calculate_status(row):
@@ -68,7 +68,6 @@ def main():
         else:
             for row in values:
              # Calculate student status considering only columns 3 to 6
-
                 if len(row) >= 7 and row[6]:  
                     row[6] = (calculate_status([float(cell) for cell in row[2:6]]))    
                 else:
